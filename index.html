@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rock Paper Scissors</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🎮 Rock Paper Scissors</h1>
+        <p>Best of 5 • First to 3 Wins</p>
+    </header>
+
+    <!-- Score -->
+    <div class="score-board">
+
+        <div class="score-card">
+            <span>YOU</span>
+            <strong id="player-score">0</strong>
+        </div>
+
+        <div class="vs">VS</div>
+
+        <div class="score-card">
+            <span>COMPUTER</span>
+            <strong id="computer-score">0</strong>
+        </div>
+
+    </div>
+
+    <!-- Game Window -->
+    <div class="game-window">
+
+        <div class="round-info">
+            Round <span id="round">0</span>
+        </div>
+
+        <div class="choices-display">
+
+            <div class="player-choice">
+                <div class="icon" id="player-icon">❔</div>
+                <h3>You</h3>
+                <p id="player-choice">-</p>
+            </div>
+
+            <div class="result-box">
+                <p id="result">Choose your move!</p>
+            </div>
+
+            <div class="computer-choice">
+                <div class="icon" id="computer-icon">❔</div>
+                <h3>Computer</h3>
+                <p id="computer-choice">-</p>
+            </div>
+
+        </div>
+
+        <h2>Choose Your Move</h2>
+
+        <div class="buttons">
+
+            <button class="choice-btn" onclick="playGame('rock')">
+                <span>🪨</span>
+                Rock
+            </button>
+
+            <button class="choice-btn" onclick="playGame('paper')">
+                <span>📄</span>
+                Paper
+            </button>
+
+            <button class="choice-btn" onclick="playGame('scissors')">
+                <span>✂️</span>
+                Scissors
+            </button>
+
+        </div>
+
+        <button class="new-game-btn" onclick="newMatch()">
+            🔄 New Game
+        </button>
+
+    </div>
+
+    <!-- History -->
+    <div class="history-section">
+
+        <h2>📜 Game History</h2>
+
+        <ul id="history">
+            <li class="empty-history">No games played yet.</li>
+        </ul>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
